@@ -2086,7 +2086,7 @@ figure {
 /* ============================= */
 
 .skills-light {
-  background: linear-gradient(135deg, #fdfcf8 0%, #f4f1ea 100%) !important;
+  background: linear-gradient(135deg, #fbfaf4 0%, #f3efe5 50%, #ece6d9 100%) !important;
   position: relative;
   overflow: hidden;
 }
@@ -2094,12 +2094,33 @@ figure {
 .skills-light::before {
   content: "";
   position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(198,168,91,0.15) 0%, transparent 70%);
-  top: -200px;
-  right: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle at 70% 20%, rgba(198,168,91,0.18) 0%, transparent 60%);
+  top: -250px;
+  right: -220px;
   z-index: 0;
+  filter: blur(2px);
+}
+
+.skills-light::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(800px 200px at -10% 90%, rgba(198,168,91,0.12), transparent 60%),
+    radial-gradient(600px 150px at 120% 10%, rgba(198,168,91,0.1), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skills-light .container {
+  position: relative;
+  z-index: 1;
+}
+
+.skills-light .skills-list {
+  gap: 3rem 2.5rem;
 }
 
 /* ============================= */
@@ -2107,18 +2128,19 @@ figure {
 /* ============================= */
 
 .section-title-light {
-  font-size: 48px !important;
+  font-size: 52px !important;
   font-weight: 700 !important;
   letter-spacing: 2px !important;
   text-align: center !important;
   margin-bottom: 80px !important;
   color: #1a1a1a !important;
+  text-shadow: 0 1px 0 #ffffff, 0 0 10px rgba(198,168,91,0.15);
 }
 
 .section-title-light span {
   position: relative;
   display: inline-block;
-  padding: 0 25px;
+  padding: 0 28px;
 }
 
 .section-title-light span::before,
@@ -2126,18 +2148,18 @@ figure {
   content: "";
   position: absolute;
   top: 50%;
-  width: 100px;
+  width: 120px;
   height: 2px;
-  background: linear-gradient(to right, transparent, #c6a85b);
+  background: linear-gradient(to right, transparent, #d2b56b);
 }
 
 .section-title-light span::before {
-  left: -110px;
+  left: -130px;
 }
 
 .section-title-light span::after {
-  right: -110px;
-  background: linear-gradient(to left, transparent, #c6a85b);
+  right: -130px;
+  background: linear-gradient(to left, transparent, #d2b56b);
 }
 
 /* ============================= */
@@ -2145,39 +2167,87 @@ figure {
 /* ============================= */
 
 .skill-item-light {
-  background: rgba(255, 255, 255, 0.7) !important;
-  backdrop-filter: blur(8px) !important;
-  border-radius: 20px !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 22px !important;
   padding: 50px 35px !important;
-  border: 1px solid rgba(198,168,91,0.15) !important;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.05) !important;
+  border: 1px solid rgba(198,168,91,0.25) !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06), inset 0 0 0 1px rgba(255,255,255,0.4) !important;
   position: relative;
   z-index: 1;
+  transform: translateZ(0);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.skill-item-light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0));
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.skill-item-light::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -10px;
+  height: 20px;
+  background: radial-gradient(50% 50% at 50% 0%, rgba(0,0,0,0.08), transparent 70%);
+  filter: blur(6px);
+  z-index: -1;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .skill-item-light:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 25px 60px rgba(198,168,91,0.25) !important;
+  transform: translateY(-14px) scale(1.02);
+  box-shadow: 0 28px 60px rgba(198,168,91,0.25), 0 8px 24px rgba(0,0,0,0.08) !important;
   border: 1px solid #c6a85b !important;
 }
 
+.skill-item-light:hover::after {
+  opacity: 1;
+  transform: translateY(6px) scale(1.05);
+}
+
 .skill-item-light .skill-icon img {
-  transition: all 0.4s ease;
+  width: 80px !important;
+  height: 60px !important;
+  transition: all 0.35s ease;
+  filter: drop-shadow(0 4px 10px rgba(198,168,91,0.35));
 }
 
 .skill-item-light:hover .skill-icon img {
-  transform: scale(1.15);
-  filter: drop-shadow(0 5px 15px rgba(198,168,91,0.5));
+  transform: translateY(-4px) scale(1.12);
+  filter: drop-shadow(0 6px 16px rgba(198,168,91,0.55));
 }
 
 .skill-item-light .skill-description_title {
   font-size: 22px !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   color: #1c1c1c !important;
+  letter-spacing: 0.3px !important;
 }
 
 .skill-item-light .skill-description_text {
-  color: #666 !important;
+  color: #6b6b6b !important;
   font-size: 16px !important;
   line-height: 1.7 !important;
 }
+
+@keyframes floatInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.skills-light .skill-item-light {
+  animation: floatInUp 0.6s ease both;
+}
+
+.skills-light .skill-item-light:nth-child(odd) { animation-delay: 0.05s; }
+.skills-light .skill-item-light:nth-child(even) { animation-delay: 0.15s; }
+
+/*
