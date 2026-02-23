@@ -30,25 +30,32 @@
 }
 
 .logo {
-  width: 55px;
-  height: 50px;
+  width: 110px;
+  height: 100px;
 
-  @include mask("../assets/svg/logo-white.svg");
+  // Use raster logo image instead of SVG mask
+  background-image: url("../assets/favicon/download.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: inline-block;
 
   @extend %transition;
 
   @include media-tablet-portrait {
-    width: 50px;
+    width: 95px;
+    height: 86px;
   }
 
   @include media-iphone5 {
-    width: 45px;
-    height: 40px;
+    width: 80px;
+    height: 72px;
   }
 }
 
 .logo-light {
-  @include mask("../assets/svg/logo-black.svg", cover, $text-light-theme-color, $brand-color);
+  // Keep same image for light theme, no mask
+  background-image: url("../assets/favicon/download.png");
 }
 
 .language-switcher {

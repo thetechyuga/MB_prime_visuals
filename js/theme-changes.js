@@ -12,6 +12,8 @@ const lightTheme = {
   'section-title': 'section-title-light',
   'skill-item': 'skill-item-light',
   'skill-description': 'skill-description-light',
+  'skills': 'skills-light',
+  'wrapper': 'wrapper-light',
   'price-list__card': 'price-list__card-light',
   'card-price': 'card-price-light',
   'text-gold': 'text-gold',
