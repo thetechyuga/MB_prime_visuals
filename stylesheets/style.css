@@ -2311,18 +2311,30 @@ figure {
   }
 }
 
-/* Light theme: remove boxed heading style for Services only */
+/* Light theme: remove boxed heading style for Services, Portfolio and Packages */
 .body-light #skills .section-title > span,
-.body-light #skills .section-title-light > span {
+.body-light #skills .section-title-light > span,
+.body-light #portfolio .section-title > span,
+.body-light #portfolio .section-title-light > span,
+.body-light #price .section-title > span,
+.body-light #price .section-title-light > span {
   background: transparent !important;
   padding: 0 !important;
 }
 
-/* Hide decorative lines for Services heading in light theme */
+/* Hide decorative lines for Services, Portfolio and Packages headings in light theme */
 .body-light #skills .section-title::before,
 .body-light #skills .section-title::after,
 .body-light #skills .section-title-light::before,
-.body-light #skills .section-title-light::after {
+.body-light #skills .section-title-light::after,
+.body-light #portfolio .section-title::before,
+.body-light #portfolio .section-title::after,
+.body-light #portfolio .section-title-light::before,
+.body-light #portfolio .section-title-light::after,
+.body-light #price .section-title::before,
+.body-light #price .section-title::after,
+.body-light #price .section-title-light::before,
+.body-light #price .section-title-light::after {
   display: none !important;
 }
 
