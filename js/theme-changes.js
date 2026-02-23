@@ -10,6 +10,7 @@ const lightTheme = {
   'button': 'button-light',
   'button_colored': 'button_colored-light',
   'section-title': 'section-title-light',
+  'portfolio-tagline': 'portfolio-tagline-light',
   'skill-item': 'skill-item-light',
   'skill-description': 'skill-description-light',
   'skills': 'skills-light',

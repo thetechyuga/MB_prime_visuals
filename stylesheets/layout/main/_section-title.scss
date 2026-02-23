@@ -46,3 +46,24 @@
     background: $text-light-theme-color;
   }
 }
+
+.portfolio-tagline {
+  text-align: center;
+  margin: -2rem auto 3rem;
+  font-family: "Merriweather-Regular", serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: $brand-color;
+  letter-spacing: 1px;
+  transition: all 0.4s ease-in-out;
+
+  @include media-tablet-portrait {
+    font-size: 1.2rem;
+    margin: -2.5rem auto 2.5rem;
+    padding: 0 1rem;
+  }
+}
+
+.portfolio-tagline-light {
+  color: $text-light-theme-color;
+}
