@@ -722,10 +722,10 @@ figure {
 
 @media (max-width: 768px) {
   .header {
-    height: 70px;
+    height: 60px;
   }
   .container-header {
-    padding: 0 20px;
+    padding: 0 16px;
   }
 }
 
@@ -762,14 +762,14 @@ figure {
 }
 @media (max-width: 768px) {
   .logo {
-    width: 110px;
-    height: 100px;
+    width: 88px;
+    height: 78px;
   }
 }
 @media (max-width: 320px) {
   .logo {
-    width: 95px;
-    height: 86px;
+    width: 82px;
+    height: 72px;
   }
 }
 
@@ -942,6 +942,7 @@ figure {
   .container-hero {
     height: 600px;
     background: url(../assets/img/dark-theme/hero-main-photo1\ -\ Copy.jpg) 50% 0 no-repeat;
+    padding-top: 12px;
   }
 }
 @media (max-width: 480px) {
@@ -979,7 +980,7 @@ figure {
 }
 @media (max-width: 480px) {
   .hero__about {
-    margin: 4rem auto;
+    margin: 4.5rem auto;
     align-items: center;
     text-align: center;
     padding: 0 1rem;
@@ -1715,7 +1716,7 @@ figure {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 40px;
+  padding: 2.5rem 28px; /* reduced overall footer size */
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1750,8 +1751,8 @@ figure {
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;
-    gap: 2rem;
-    padding: 3rem 20px;
+    gap: 1.25rem; /* tighter gap */
+    padding: 1.75rem 16px; /* smaller footer on mobile */
     text-align: center;
   }
 
@@ -1761,7 +1762,7 @@ figure {
 }
 
 .copyright {
-  font-size: 1rem;
+  font-size: 0.9rem; /* slightly smaller text */
   color: #ffffff;
   white-space: nowrap;
 }
@@ -1787,8 +1788,8 @@ figure {
 
 .social-link {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 28px; /* smaller icons */
+  height: 28px;
 }
 
 .instagram-link {
@@ -2255,5 +2256,74 @@ figure {
 
 .skills-light .skill-item-light:nth-child(odd) { animation-delay: 0.05s; }
 .skills-light .skill-item-light:nth-child(even) { animation-delay: 0.15s; }
+
+/* Mobile overrides: shrink top-right header controls */
+@media (max-width: 768px) {
+  /* Smaller theme switcher icon */
+  .theme-switcher {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+
+  /* Smaller hamburger button */
+  .hamburger-button {
+    width: 34px;
+    height: 20px;
+  }
+  .hamburger-button:before,
+  .hamburger-button:after,
+  .hamburger-button .hamburger-button__line {
+    height: 2px;
+  }
+  .hamburger-button.active-hamburger-button:before,
+  .hamburger-button.active-hamburger-button:after {
+    width: 100%;
+  }
+
+  /* Tighter language switcher */
+  .language-switcher {
+    min-width: auto;
+    gap: 6px;
+  }
+  .language-switcher > span {
+    margin-right: 6px;
+  }
+
+  /* Slightly reduce right spacing of header cluster */
+  .container-header {
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-switcher {
+    width: 28px;
+    height: 28px;
+    margin-right: 6px;
+  }
+  .hamburger-button {
+    width: 30px;
+    height: 18px;
+  }
+  .language-switcher {
+    gap: 4px;
+  }
+}
+
+/* Light theme: remove boxed heading style for Services only */
+.body-light #skills .section-title > span,
+.body-light #skills .section-title-light > span {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* Hide decorative lines for Services heading in light theme */
+.body-light #skills .section-title::before,
+.body-light #skills .section-title::after,
+.body-light #skills .section-title-light::before,
+.body-light #skills .section-title-light::after {
+  display: none !important;
+}
 
 /*
