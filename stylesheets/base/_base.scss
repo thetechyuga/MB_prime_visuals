@@ -3,10 +3,15 @@ html {
   font-size: 1em;
 
   background-color: $bg-color;
+  overflow-x: hidden; // prevent horizontal scroll from off-canvas elements
 }
 
 .html-light {
   background-color: $bg-light-theme-color;
+}
+
+body {
+  overflow-x: hidden; // ensure body doesn't produce horizontal scroll
 }
 
 *,
